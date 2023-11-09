@@ -1,17 +1,13 @@
 package api1;
 
-import java.net.URI;
 import java.util.*;
 
-import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.*;
 
 import api1.dto.request.OrderRequest;
 import api1.dto.response.OrderResponse;
@@ -36,18 +32,17 @@ public class ApiController {
 	@PostMapping(path="api/add/order")
 	public OrderResponse addOrder(@RequestBody OrderInput orderInput){
 			OrderRequest or = new OrderRequest();
-			or.setName(orderInput.name);
-			or.setCategory(orderInput.category);
+			or.setName(orderInput.getName());
+			or.setCategory(orderInput.getCategory());
 			Date today = new Date();
 			or.setDateOfOrder(today);
-			or.setPrice(orderInput.price);
-			OrderResponse resp = orderService.saveOrder(or);
-			return resp;
+			or.setPrice(orderInput.getPrice());
+			return orderService.saveOrder(or);
 	}
 
 	@PreAuthorize("hasRole('admin-access')")
 	@GetMapping(path="/check/admin")
-	public int is_admin(){
+	public int isAdmin(){
 		return 1;
 	}
 	

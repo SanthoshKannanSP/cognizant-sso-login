@@ -5,7 +5,6 @@ api1/service/impl/OrderServiceImpl.class
 api1/SecurityConfig$1.class
 api1/dto/request/OrderRequest.class
 api1/Api1Application.class
-api1/entity/OrderJson.class
 api1/dto/response/OrderResponse.class
 api1/ApiController.class
 api1/dto/mapper/OrderMapper.class

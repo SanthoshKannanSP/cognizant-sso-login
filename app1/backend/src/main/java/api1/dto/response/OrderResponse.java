@@ -10,8 +10,6 @@ public class OrderResponse implements Serializable {
     private Date dateOfOrder;
     private Long price;
 
-    public OrderResponse() {
-    }
 
     public Long getId() {
         return id;
