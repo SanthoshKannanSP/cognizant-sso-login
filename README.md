@@ -1,4 +1,4 @@
-# cognizant-sso-login
+# SSO Login - Cognizant CAFE Contest
 
 ## PREREQUISITES
 - Docker
